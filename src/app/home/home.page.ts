@@ -1,4 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { PostsService } from './../services/posts.service';
+
+
 
 @Component({
   selector: 'app-home',
@@ -6,7 +10,18 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  
 
-  constructor() {}
+  constructor( 
+    public httpClient: HttpClient,
+    public Posts: PostsService
+    ) {
+      console.log(this.getPosts())
+    
+  }
+
+  getPosts(){
+    this.Posts.getAllPosts().subscribe( data => { console.log(data)} );
+  }
 
 }
