@@ -16,8 +16,7 @@ export class HomePage {
     public httpClient: HttpClient,
     public Posts: PostsService
     ) {
-      console.log(this.getPosts())
-    
+          
   }
 
   getPosts(){
